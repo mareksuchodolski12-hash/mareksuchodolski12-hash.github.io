@@ -216,12 +216,12 @@ section{
   gap: 14px;
 }
 
-.brand{ display:flex; align-items:center; gap:10px; font-weight:900; letter-spacing:-.02em; }
+.brand{ display:flex; align-items:center; gap:10px; font-weight:900; letter-spacing:-.02em; min-width:0; }
 .logo-link{
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
+  width: auto;
   height: 40px;
   border-radius: 10px;
   transition: transform 200ms ease, filter 200ms ease;
@@ -238,8 +238,8 @@ section{
   animation: logoGlow 0.6s ease-out;
 }
 .logo{
-  width: 100%;
-  height: 100%;
+  width: auto;
+  height: 36px;
   filter: drop-shadow(0 8px 20px rgba(0, 102, 255, 0.3));
   transition: filter 200ms ease;
 }
@@ -276,7 +276,10 @@ section{
 .topbar[data-menu-open="true"] .menu-toggle span:nth-child(1){ transform: translateY(7px) rotate(45deg); }
 .topbar[data-menu-open="true"] .menu-toggle span:nth-child(2){ opacity:0; }
 .topbar[data-menu-open="true"] .menu-toggle span:nth-child(3){ transform: translateY(-7px) rotate(-45deg); }
-.nav-mobile-cta{ display:none; }
+.mobile-only{ display:none !important; }
+.nav-mobile-cta{ display:none !important; }
+
+.whatsapp-cta{ display:inline-flex; }
 
 .chip{
   display:flex; align-items:center; gap:10px;
@@ -1195,6 +1198,7 @@ section{
 
   .menu-toggle{ display:flex; }
   .topbar-actions{ display:none; }
+  .whatsapp-cta{ display:none !important; }
   .topbar-inner{ flex-wrap:wrap; }
 
   .nav{
@@ -1211,10 +1215,20 @@ section{
 
   .topbar[data-menu-open="true"] .nav{ display:flex; }
   .nav a{ padding:10px 12px; }
-  .nav-mobile-cta{ display:inline-flex; margin-top:6px; justify-content:center; }
+  .mobile-only{ display:inline-flex !important; }
+  .nav-mobile-cta{
+    display:inline-flex !important;
+    width:100%;
+    margin-top:10px;
+    justify-content:center;
+    border-color: rgba(103,210,255,.55);
+    box-shadow: 0 16px 40px rgba(103,210,255,.25);
+    opacity:1;
+  }
 }
 
 @media (max-width: 640px){
+  .logo{ height:32px; }
   .hero h1{ font-size: 2.1rem; }
   .hero-inner { gap: 20px; }
   .hero-cta { gap: 10px; }

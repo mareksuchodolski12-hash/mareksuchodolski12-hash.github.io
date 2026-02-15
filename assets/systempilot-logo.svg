@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="40" viewBox="0 0 220 40" role="img" aria-labelledby="title desc">
+  <title id="title">Systempilot</title>
+  <desc id="desc">Systempilot logo</desc>
+  <defs>
+    <linearGradient id="spGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0066ff"/>
+      <stop offset="100%" stop-color="#00d4ff"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="40" height="40" rx="10" fill="url(#spGrad)"/>
+  <path d="M10 12h4l6 8 6-8h4v16h-4V18l-6 8-6-8v10h-4z" fill="#ffffff"/>
+  <text x="52" y="27" fill="#eaf0ff" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif" font-size="21" font-weight="800" letter-spacing="-0.02em">Systempilot</text>
+</svg>

@@ -133,13 +133,8 @@ function setupLogoAnimation() {
   const logo = document.getElementById('logoHome');
   if (!logo) return;
 
-  logo.addEventListener('click', (e) => {
-    e.preventDefault();
+  logo.addEventListener('click', () => {
     logo.classList.add('spinning', 'glow');
-
-    setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }, 400);
 
     setTimeout(() => {
       logo.classList.remove('spinning', 'glow');
