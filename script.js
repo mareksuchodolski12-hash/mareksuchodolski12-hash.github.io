@@ -179,7 +179,7 @@ function setupMagnetButtons() {
       const distX = (x - centerX) * 0.3;
       const distY = (y - centerY) * 0.3;
 
-      button.style.transform = \	ranslate(\px, \px)\;
+      button.style.transform = `translate(${distX}px, ${distY}px)`;
     });
 
     button.addEventListener('mouseleave', () => {
@@ -235,7 +235,7 @@ function setupParallax() {
   window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
     const offset = scrollY * 0.2;
-    heroPanel.style.transform = \	ranslateY(\px)\;
+    heroPanel.style.transform = `translateY(${offset}px)`;
   }, { passive: true });
 }
 
@@ -246,7 +246,7 @@ function animateSparkline() {
   document.querySelectorAll('.sparkline span').forEach((bar, index) => {
     bar.style.animation = 'none';
     setTimeout(() => {
-      bar.style.animation = \sparkPulse 2s ease-in-out\;
+      bar.style.animation = 'sparkPulse 2s ease-in-out';
     }, index * 100);
   });
 }
@@ -267,7 +267,7 @@ function setupFormSubmission() {
 
     if (submitBtn) {
       submitBtn.disabled = true;
-      submitBtn.textContent = 'Wysyam...';
+      submitBtn.textContent = 'Wysyłam...';
     }
 
     const formData = {
@@ -291,24 +291,57 @@ function setupFormSubmission() {
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.error || 'Co poszo nie tak');
+        throw new Error(data.error || 'Co poszło nie tak');
       }
 
       if (statusEl) {
         statusEl.className = 'form-status';
-        statusEl.textContent = 'Mam. Odpisz w 24h. Jeli zostawie telefon � oddzwoni.';
+        statusEl.textContent = 'Mam. Odpiszę w 24h. Jeśli zostawisz telefon — oddzwonię.';
       }
       form.reset();
     } catch (error) {
       if (statusEl) {
         statusEl.className = 'form-status error';
-        statusEl.textContent = \Bd: \\;
+        statusEl.textContent = `Błąd: ${error.message}`;
       }
     } finally {
       if (submitBtn) {
         submitBtn.disabled = false;
         submitBtn.textContent = originalText;
       }
+    }
+  });
+}
+
+
+/**
+ * Mobile menu toggle
+ */
+function setupMobileMenu() {
+  const topbar = document.querySelector('.topbar');
+  const toggle = document.getElementById('menuToggle');
+  const nav = document.getElementById('siteNav');
+  if (!topbar || !toggle || !nav) return;
+
+  const closeMenu = () => {
+    topbar.setAttribute('data-menu-open', 'false');
+    toggle.setAttribute('aria-expanded', 'false');
+  };
+
+  toggle.addEventListener('click', () => {
+    const isOpen = topbar.getAttribute('data-menu-open') === 'true';
+    const nextState = isOpen ? 'false' : 'true';
+    topbar.setAttribute('data-menu-open', nextState);
+    toggle.setAttribute('aria-expanded', nextState);
+  });
+
+  nav.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+      closeMenu();
     }
   });
 }
@@ -374,6 +407,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setupCounters();
   setupSmoothScroll();
   setupTopbarScroll();
+  setupMobileMenu();
   setupLogoAnimation();
   setupCaseCards();
   setupMagnetButtons();
