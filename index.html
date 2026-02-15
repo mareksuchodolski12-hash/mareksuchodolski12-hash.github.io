@@ -86,16 +86,21 @@
         <span>Systemy & Wynik</span>
       </div>
 
-      <nav class="nav" aria-label="Nawigacja">
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Otwórz menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav" id="siteNav" aria-label="Nawigacja">
         <a href="#case-studies">Studia</a>
         <a href="#stack">Stack</a>
         <a href="#process">Proces</a>
         <a href="#contact">Kontakt</a>
+        <a href="https://wa.me/31625320367" target="_blank" rel="noopener noreferrer" class="btn btn-primary nav-mobile-cta">WhatsApp</a>
       </nav>
 
       <div class="topbar-actions">
-        <a href="https://wa.me/31625320367" target="_blank" rel="noopener noreferrer" class="btn btn-primary magnet">
-          <span style="font-size: 1.2rem; margin-right: 4px;">💬</span>
+        <a href="https://wa.me/31625320367" target="_blank" rel="noopener noreferrer" class="btn btn-primary magnet" aria-label="Napisz na WhatsApp">
+          WhatsApp
           <span class="btn-shine" aria-hidden="true"></span>
         </a>
       </div>
@@ -132,21 +137,21 @@
           <div class="kpis" aria-label="Kluczowe efekty">
             <div class="kpi">
               <div class="kpi-top">
-                <span class="kpi-icon" aria-hidden="true">⚡</span>
+                <span class="kpi-icon" aria-hidden="true">Czas</span>
                 <span class="kpi-label">Skrócenie czasu procesów</span>
               </div>
               <div class="kpi-value"><span data-count="65">0</span>%</div>
             </div>
             <div class="kpi">
               <div class="kpi-top">
-                <span class="kpi-icon" aria-hidden="true">✅</span>
+                <span class="kpi-icon" aria-hidden="true">Jakość</span>
                 <span class="kpi-label">Spadek błędów</span>
               </div>
               <div class="kpi-value"><span data-count="75">0</span>%</div>
             </div>
             <div class="kpi">
               <div class="kpi-top">
-                <span class="kpi-icon" aria-hidden="true">🧠</span>
+                <span class="kpi-icon" aria-hidden="true">Tempo</span>
                 <span class="kpi-label">Decyzje szybciej</span>
               </div>
               <div class="kpi-value"><span data-count="60">0</span>%</div>
@@ -198,8 +203,8 @@
               </div>
 
               <div class="log">
-                <div class="log-row"><span class="dot ok"></span> ETL: Shopify → Postgres ✅</div>
-                <div class="log-row"><span class="dot ok"></span> Alert: anomaly check ✅</div>
+                <div class="log-row"><span class="dot ok"></span> ETL: Shopify → Postgres (OK)</div>
+                <div class="log-row"><span class="dot ok"></span> Alert: anomaly check (OK)</div>
                 <div class="log-row"><span class="dot warn"></span> Legacy API throttling… mitigated</div>
               </div>
             </div>
@@ -421,42 +426,42 @@
         <div class="stack-grid">
           <!-- DATA -->
           <div class="stack-card">
-            <div class="stack-icon">🗄️</div>
+            <div class="stack-icon">DATA</div>
             <h3 class="stack-category">Warstwy Danych</h3>
             <p class="stack-list">PostgreSQL • MongoDB • Redis • Data Lake</p>
           </div>
 
           <!-- INTEGRATION -->
           <div class="stack-card">
-            <div class="stack-icon">🔗</div>
+            <div class="stack-icon">API</div>
             <h3 class="stack-category">Integracje</h3>
             <p class="stack-list">API Gateway • Webhooks • Kafka • GraphQL</p>
           </div>
 
           <!-- AUTOMATION -->
           <div class="stack-card">
-            <div class="stack-icon">⚡</div>
+            <div class="stack-icon">Czas</div>
             <h3 class="stack-category">Automatyzacja</h3>
             <p class="stack-list">Make • Zapier • n8n • Custom Workflows</p>
           </div>
 
           <!-- VISIBILITY -->
           <div class="stack-card">
-            <div class="stack-icon">📊</div>
+            <div class="stack-icon">BI</div>
             <h3 class="stack-category">Widoczność Danych</h3>
             <p class="stack-list">Metabase • Mode Analytics • Looker • Dashboards</p>
           </div>
 
           <!-- INFRASTRUCTURE -->
           <div class="stack-card">
-            <div class="stack-icon">🏗️</div>
+            <div class="stack-icon">DEVOPS</div>
             <h3 class="stack-category">Infrastruktura</h3>
             <p class="stack-list">AWS • GCP • Vercel • Docker • Kubernetes</p>
           </div>
 
           <!-- OBSERVABILITY -->
           <div class="stack-card">
-            <div class="stack-icon">👁️</div>
+            <div class="stack-icon">MON</div>
             <h3 class="stack-category">Obserwacja</h3>
             <p class="stack-list">Monitoring 24/7 • Alerty • Logs • Metrics</p>
           </div>
@@ -541,22 +546,22 @@
 
           <div class="cta-chips">
             <div class="chip">
-              <span class="chip-icon">🌍</span>
+              <span class="chip-icon">NL</span>
               <span>Holandia / Zdalnie</span>
             </div>
             <div class="chip">
-              <span class="chip-icon">⚡</span>
+              <span class="chip-icon">Czas</span>
               <span>MVP w 7 dni</span>
             </div>
             <div class="chip">
-              <span class="chip-icon">🎯</span>
+              <span class="chip-icon">OPS</span>
               <span>Automatyzacja • Dane • Systemy</span>
             </div>
           </div>
 
           <div class="cta-actions">
             <a href="https://wa.me/31625320367?text=Cześć%20Marek%21%20Chciałbym%20pogadać%20o%20automatyzacji%20i%20systemach%20dla%20mojego%20biznesu." target="_blank" rel="noopener noreferrer" class="btn btn-cta" aria-label="Napisz na WhatsApp">
-              <span class="btn-icon">💬</span>
+              <span class="btn-icon">WA</span>
               <span>WhatsApp: +31 6 2532 0367</span>
               <span class="btn-shine" aria-hidden="true"></span>
             </a>
